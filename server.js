@@ -14,6 +14,10 @@ app.use(cors({
     credentials: true
   }));
 
+  app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() });
+});
+
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
