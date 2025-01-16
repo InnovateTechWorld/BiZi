@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
             displayName: `uploaded_file_${Date.now()}`
         });
 
-        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+        const model = genAI.getGenerativeModel({ model: "gemini-exp-1206" });
 
         const prompt = `Analyze the following document and provide a detailed summary and key points in JSON format.
         Always Produce an output with the available Information in the document and Always follow the JSON Format.
