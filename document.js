@@ -39,7 +39,6 @@ router.post('/', async (req, res) => {
         const model = genAI.getGenerativeModel({ model: "gemini-exp-1206" });
 
         const prompt = `Analyze the following document and provide a detailed summary and key points in JSON format.
-        Always Produce an output with the available Information in the document and Always follow the JSON Format.
         
         The JSON format should be strictly a JSON object, without any additional formatting such as backticks or the word "json". For example:
         {
