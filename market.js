@@ -30,6 +30,8 @@ router.post('/', async (req, res) => {
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
         const prompt = `Analyze the following search results and provide 5 key insights in JSON format:
+                Always Produce an output with the available Search results and Always follow the JSON Format.
+
         
         Search Results:
         ${searchResults}
