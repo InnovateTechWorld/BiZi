@@ -38,12 +38,27 @@ router.post('/', async (req, res) => {
 
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-        const prompt = `Analyze the following document and provide a detailed summary and key points. Your ENTIRE response MUST be a valid JSON object, and nothing else. Do not include any backticks, the word "json", or any other conversational text or explanations. The JSON object should have the following format:
+        const prompt = `You are an expert document analyzer. Your task is to analyze the provided document and extract a detailed summary and key points. You MUST respond with a valid JSON object, and nothing else. Do not include any backticks, the word "json", or any other conversational text or explanations. The JSON object should have the following format, and you MUST adhere to this format strictly:
         
+        Example 1:
         {
             "summary": "A detailed summary of the document.",
             "keyPoints": ["key point 1", "key point 2", "key point 3"]
         }
+
+        Example 2:
+        {
+            "summary": "This document discusses the importance of sustainable practices.",
+            "keyPoints": ["environmental impact", "renewable energy", "waste reduction"]
+        }
+
+        Example 3:
+        {
+            "summary": "The report outlines the company's financial performance for the year.",
+            "keyPoints": ["revenue growth", "profit margins", "market share"]
+        }
+
+        Your ENTIRE response MUST be a valid JSON object, and nothing else. Do not include any backticks, the word "json", or any other conversational text or explanations.
         `;
 
         const result = await model.generateContent([
