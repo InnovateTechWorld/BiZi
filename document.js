@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
             displayName: `uploaded_file_${Date.now()}`
         });
 
-        const model = genAI.getGenerativeModel({ model: "gemini-exp-1206" });
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
         const prompt = `Analyze the following document and provide a detailed summary and key points. Your ENTIRE response MUST be a valid JSON object, and nothing else. Do not include any backticks, the word "json", or any other conversational text or explanations. The JSON object should have the following format:
         
