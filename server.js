@@ -11,7 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: 'https://bi-zi-mate.vercel.app', // Your frontend URL
+    origin: 'http://luminara-lemon.vercel.app', // Your frontend URL
     methods: ['GET', 'POST'],
     credentials: true
   }));
